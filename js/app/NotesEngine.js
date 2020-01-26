@@ -13,6 +13,7 @@ define(function(require) {
 
     // // STYLEGUIDE LAYOUT VIEW
     var sty = require('./views/styleGuideView');
+    var lagrange_thm = require('./views/lagrangeTheoremView');
     //
     //
     // // MASTER LAYOUT VIEW
@@ -47,6 +48,7 @@ define(function(require) {
 
 
     var styleGuide_rendered = new sty.StyleGuideView().render();
+    var lagrangeThm_rendered = new lagrange_thm.LagrangeTheoremView().render();
 
 
     // var header_rendered = new hv.HeaderView().render();
@@ -252,7 +254,7 @@ define(function(require) {
 
 
 
-        book.spv(styleGuide_rendered);
+        book.spv(lagrangeThm_rendered);
 
     }else{
 
