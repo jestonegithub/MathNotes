@@ -1,24 +1,27 @@
 
 
-<div id="lagrange_title_container">Lagrange's Theorem</div>
+<div id="lagrange_title_container" class="lagrange_containers">Lagrange's Theorem</div>
 
-<div id="lagrange_summary_container">Summary</div>
+<div id="lagrange_statement_container" class="lagrange_containers">Let $ G$ be a finite group and $ H$ a subgroup of $ G$.
+    Then $ |H|$ (the order of $ H$) divides $|G|$.</div>
 
-<div id="lagrange_statement_container">Let $ G$ be a finite group and $ H$ a subgroup of $ G$. Then the order of $ H$ (which we denote $ |H|$) divides the order of $ G$ ($ |G|$). In other words, $ |H| | |G|$.</div>
+<div id="lagrange_summary_container" class="lagrange_containers">Lagrange's Theorem is a result in group theory that has powerful implications
+    for the structure of finite groups. </div>
 
-<div id="lagrange_lemma_statement_container">Let $ \sim$ be an equivalence relation on a set $ S$.
+
+<div id="lagrange_lemma_statement_container" class="lagrange_containers">Let $ \sim$ be an equivalence relation on a set $ S$.
     Then $ S = \cup [a]$ where the union runs over one element from each class.
     Furthermore, if $ [a] \neq [b]$, then $ [a] \cap [b]$.
     Thus, $ \sim$ partitions $ S$ into disjoint equivalence classes.</div>
 
-<div id="lagrange_lemma_proof_container">To prove that every two distinct equivalence classes are disjoint (empty intersection)
+<div id="lagrange_lemma_proof_container" class="lagrange_containers">To prove that every two distinct equivalence classes are disjoint (empty intersection)
     we simply need to recognize that if any element $ c$ is shared by two equivalence classes, then the two equivalence classes must be equal.
     Note that $ c$ in $ [a]$ means that $ a \sim c$. Similarly for $ b \in [b]$. By transitivity, $ a \sim c, b \sim c$ means that $ a \sim b$.
     This is true for any $ a, b$ in their respective equivalence classes, so we must have that $ [a] = [b]$. In other words, either the two
     equivalence classes are disjoint and share no elements, or they share all their elements (and are just equal). Since every element in the
     original set belongs to only a single equivalence class, this means that all of the equivalence classes taken together comprise all of $ S$.</div>
 
-<div id="lagrange_proof_container">Note that $H$ can be used to define an equivalence relation as follows: if $ab^{-1} \in H$, then $a \sim b$. We already
+<div id="lagrange_proof_container" class="lagrange_containers">Note that $H$ can be used to define an equivalence relation as follows: if $ab^{-1} \in H$, then $a \sim b$. We already
     know that $ H$ can be used to partition $ G$ based on the equivalence associated with cosets $ Ha$.
     Thus, $ G = \cup Ha$ where the union runs over $ a$ from distinct classes. The proof will follow if we can show that each $ Ha$ is in 1-1
     correspondence with $ H = H e_G$. Since $ G$ if finite, so must be any subgroup, and thus $ H$ is finite. Note also that $ Ha = \{ha|h \in H\}$.
