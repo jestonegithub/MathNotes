@@ -1,7 +1,25 @@
+
+.page_background{
+
+    background-color: #235da4;
+    color:white;
+
+
+}
+
+#lagrange_inner_container{
+
+    /*width:900px;*/
+    /*margin:auto;*/
+
+}
+
 #lagrange_title_container{
 
-    font-family: 'Baskervville', serif;
+    /*font-family: 'Baskervville', serif;*/
+    font-family: 'Didact Gothic', sans-serif;
     font-size:30px;
+    min-height:300px;
 
 
 }

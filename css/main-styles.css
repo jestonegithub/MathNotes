@@ -1,3 +1,22 @@
+body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100%;
+    width:100%;
+    display:table;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+
+    font-size: 14pt;
+    margin:0;
+
+    background-color: aqua;
+
+}
+
+
+
 #main {
 
     width:900px;

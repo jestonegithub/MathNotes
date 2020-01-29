@@ -212,6 +212,12 @@ define(function(require) {
             // append it
             $('#main').append(spv_o.$el);
 
+            //change background color to match .page_background
+            console.log('changing color');
+            var color = $('.page_background').css( "background-color" );
+            $('body').css("background-color", color);
+
+
             // render jax
             this.typeset();
 
