@@ -11,6 +11,7 @@
 
     /*width:900px;*/
     /*margin:auto;*/
+    font-family: 'Didact Gothic', sans-serif;
 
 }
 
@@ -18,13 +19,80 @@
 
     /*font-family: 'Baskervville', serif;*/
     font-family: 'Didact Gothic', sans-serif;
-    font-size:30px;
-    min-height:300px;
+    font-size:100px;
+    /*min-height:300px;*/
+    margin-bottom: 50px;
 
 
 }
+
+#lagrange_header_top{
+
+    /*font-family: 'Baskervville', serif;*/
+    font-family: 'Didact Gothic', sans-serif;
+    font-size:30px;
+    min-height:150px;
+    min-width:100%;
+
+
+
+}
+
+
+#lagrange_statement_left_spacer{
+
+
+}
+
+#lagrange_statement_section{
+
+    border:1pt solid rgba(255, 255, 255, 0.45);
+    /*margin-bottom:50px;*/
+
+}
+
+#lagrange_statement_container{
+
+    margin-left:150px;
+    display:inline-block;
+    /*margin-bottom:50px;*/
+    padding:30px;
+    border-left:1pt solid rgba(255, 255, 255, 0.45);
+
+}
+
+
+
+
+#lagrange_left_word_column{
+
+    width:350px;
+    display:inline-block;
+    border:1pt solid rgba(255, 255, 255, 0.45);
+    padding:10px;
+
+}
+
+#lagrange_letter_image{
+
+
+    width:200px;
+    display:inline-block;
+    /*min-height:900px;*/
+
+}
+
 
 .lagrange_containers{
 
-    border: 1pt solid black;
+    /*border: 1pt solid black;*/
 }
+
+.lagrange_paragraphs{
+
+    margin-bottom:10px;
+    font-size:12px;
+
+}
+
+
