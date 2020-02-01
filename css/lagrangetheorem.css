@@ -1,8 +1,8 @@
 
 .page_background{
 
-    background-color: #235da4;
-    color:white;
+    background-color: #ffffff;
+    color: #000000;
 
 
 }
@@ -46,7 +46,7 @@
 
 #lagrange_statement_section{
 
-    border:1pt solid rgba(255, 255, 255, 0.45);
+    /*border:1pt solid rgba(255, 255, 255, 0.45);*/
     /*margin-bottom:50px;*/
 
 }
@@ -57,18 +57,32 @@
     display:inline-block;
     /*margin-bottom:50px;*/
     padding:30px;
-    border-left:1pt solid rgba(255, 255, 255, 0.45);
+    border-left:1pt solid rgba(0, 0, 0, 0.58);
 
 }
 
 
+#lagrange_lemma_statement_container{
 
+    padding: 20px;
+    border-top:1pt solid white;
+
+}
+
+
+#lagrange_lemma_proof_container{
+
+    padding: 20px;
+    border-bottom:1pt solid white;
+
+}
 
 #lagrange_left_word_column{
 
     width:350px;
     display:inline-block;
-    border:1pt solid rgba(255, 255, 255, 0.45);
+    border-left:1pt solid rgba(255, 255, 255, 0.45);
+    border-right:1pt solid rgba(255, 255, 255, 0.45);
     padding:10px;
 
 }
@@ -91,7 +105,7 @@
 .lagrange_paragraphs{
 
     margin-bottom:10px;
-    font-size:12px;
+    font-size:15px;
 
 }
 
