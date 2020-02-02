@@ -19,7 +19,7 @@
 
     /*font-family: 'Baskervville', serif;*/
     font-family: 'Didact Gothic', sans-serif;
-    font-size:100px;
+    font-size:120px;
     /*min-height:300px;*/
     margin-bottom: 50px;
 
@@ -64,21 +64,33 @@
 
 #lagrange_lemma_statement_container{
 
-    padding: 20px;
-    border-top:1pt solid white;
+    margin-top:10px;
+    padding-right: 55px;
+    /*border-top:1pt solid white;*/
 
 }
 
 
 #lagrange_lemma_proof_container{
 
-    padding: 20px;
+    /*padding: 20px;*/
     border-bottom:1pt solid white;
+
+}
+
+#lagrange_proof_container{
+
+    position:absolute;
+    left:400px;
+    top:350px;
+    width:200px;
+
 
 }
 
 #lagrange_left_word_column{
 
+    position:relative;
     width:350px;
     display:inline-block;
     border-left:1pt solid rgba(255, 255, 255, 0.45);
@@ -89,10 +101,15 @@
 
 #lagrange_letter_image{
 
-
-    width:200px;
+    position:absolute;
+    left:500px;
+    font-size:300px;
+    /*width:200px;*/
     display:inline-block;
     /*min-height:900px;*/
+    font-family: 'Baskervville', serif;
+
+
 
 }
 
