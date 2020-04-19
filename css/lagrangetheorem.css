@@ -13,6 +13,7 @@
     /*margin:auto;*/
     font-family: 'Didact Gothic', sans-serif;
 
+
 }
 
 #lagrange_title_container{
@@ -84,6 +85,8 @@
     left:400px;
     top:350px;
     width:200px;
+    border-bottom: 1pt solid black;
+    padding-bottom: 100px;
 
 
 }
