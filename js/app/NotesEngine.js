@@ -13,6 +13,14 @@ define(function(require) {
 
     // // STYLEGUIDE LAYOUT VIEW
     var sty = require('./views/styleGuideView');
+
+
+    // main site view
+
+    
+
+
+    // single article views
     var lagrange_thm = require('./views/lagrangeTheoremView');
     //
     //
