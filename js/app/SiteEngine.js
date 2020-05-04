@@ -7,13 +7,13 @@ define(function(require) {
     var _ = require('underscore');
     var bb = require('backbone');
     var mn = require('marionette');
-    //var t2v = require('./views/test2View');
+
 
 
     // MAIN Page LAYOUT VIEW
 
-    var mpv = require('./views/notesLayoutView');
-    var mpv_rendered = new mpv.NotesLayoutView().render();
+    var mpv = require('./views/SiteLayoutView');
+    var mpv_rendered = new mpv.SiteLayoutView().render();
 
 
 
@@ -90,7 +90,7 @@ define(function(require) {
 
 
 
-    var NotesEngine = mn.Application.extend({
+    var SiteEngine = mn.Application.extend({
 
 
 // ---------- MANUAL EDITS TO ORGANIZE BOOK ARE HERE ---------------- //
@@ -244,13 +244,7 @@ define(function(require) {
 
 
 
-
-
-
-
-
-
-    var book = new NotesEngine();
+    var book = new SiteEngine();
 
 
     // SET ACTION HERE...
@@ -294,7 +288,7 @@ define(function(require) {
 
 
 
-    return NotesEngine;
+    return SiteEngine;
 
 
 });
