@@ -10,9 +10,19 @@ define(function(require) {
     //var t2v = require('./views/test2View');
 
 
+    // MAIN Page LAYOUT VIEW
+
+    var mpv = require('./views/notesLayoutView');
+    var mpv_rendered = new mpv.NotesLayoutView().render();
+
+
+
 
     // // STYLEGUIDE LAYOUT VIEW
     var sty = require('./views/styleGuideView');
+
+
+
     var lagrange_thm = require('./views/lagrangeTheoremView');
     //
     //
@@ -69,6 +79,12 @@ define(function(require) {
 
 
 
+
+
+
+    // SET SINGLE PAGE VIEW
+
+    var singe_page = mpv_rendered;
 
 
 
@@ -260,7 +276,7 @@ define(function(require) {
 
 
 
-        book.spv(lagrangeThm_rendered);
+        book.spv(singe_page);
 
     }else{
 
