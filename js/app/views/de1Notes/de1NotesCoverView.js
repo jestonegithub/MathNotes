@@ -2,18 +2,18 @@ define(function (require) {
     var mn = require('marionette');
     var bb = require('backbone');
     //var _ = require('underscore');
-    var tmp = require('hbs!app/templates/homePageView');
+    var tmp = require('hbs!app/templates/de1Notes/de1NotesCoverView');
 
 
     //This is a View - and the root view of the game living in #main
 
-    var HomePageView = mn.ItemView.extend({
+    var De1NotesCoverView = mn.ItemView.extend({
 
         template: tmp,
 
-        id:'homepage',
+        id:'de1NotesCover',
 
-        className:'home',
+        className:'notes',
 
         // chapterNumber:0,
         //
@@ -37,10 +37,10 @@ define(function (require) {
         onAttach: function(){
 
 
-                $('#de1').click(function() {
-                    bb.trigger('load_de1_notes');
-
-            });
+            // $('#deI').click(function() {
+            //     alert( "Handler for .click() called.");
+            //
+            // });
 
 
         }
@@ -62,6 +62,6 @@ define(function (require) {
     });
 
 
-    return {HomePageView:HomePageView}
+    return {De1NotesCoverView:De1NotesCoverView}
 
 });

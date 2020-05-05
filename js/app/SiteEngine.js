@@ -9,18 +9,18 @@ define(function(require) {
     var mn = require('marionette');
 
     // ----------------------------------------------------
-    // ------------- LOADING AND RENDERING *ALL* VIEWS ---------------------------------
+    // ------------- LOADING *ALL* VIEWS ---------------------------------
     // ----------------------------------------------------
 
     // Site LAYOUT VIEW
 
     var slv = require('./views/SiteLayoutView');
-    var slv_rendered = new slv.SiteLayoutView().render();
+    // var slv_rendered = new slv.SiteLayoutView().render();
 
     // HOME PAGE VIEW
 
     var hpv = require('./views/homePageview');
-    var hpv_rendered = new hpv.HomePageView().render();
+   // var hpv_rendered = new hpv.HomePageView().render();
 
 
     // STYLEGUIDE VIEW
@@ -31,8 +31,8 @@ define(function(require) {
 
     // NOTE VIEWS
 
-
-
+    var de1notesMenu = require('./views/de1Notes/de1NotesMenuView');
+    var de1notesCover = require('./views/de1Notes/de1NotesCoverView');
 
 
 
@@ -46,16 +46,9 @@ define(function(require) {
 
 
 
-
-
-
-
-
-
-
     // SET SINGLE PAGE VIEW
 
-    var single_page = slv_rendered;
+    // var single_page = slv_rendered;
 
 
 
@@ -71,40 +64,56 @@ define(function(require) {
         // for starting book without any saved 'bookmark' data
         siteBegin: function(){
 
-
-            // OPTIONAL - fire up any intro loading sequence (buying time)
-            console.log('buying time...');
-
-
-
-            // Load in all the rendered views...
-
-            console.log('heeeer');
-            //load page layout and append to DOM
-            this.pagelayoutview = slv_rendered;
+            //var slv = require('./views/SiteLayoutView');
+            this.pagelayoutview = new slv.SiteLayoutView().render();
             this.pagelayoutview.append_layout();
-
-            // show views in regions
-
-            this.pagelayoutview.site_body.show(hpv_rendered);
-
-
-            // TYPESET MATHJAX for currently rendered views
-
-            this.typeset();
-
-
-            // GO TO NAVIGATION LOGIC
-
+            this.loadHome();
 
         },
 
 
+
+        loadHome: function(){
+
+            // hide "home bar" at top of page
+
+            // show views in regions
+            this.pagelayoutview.site_body.show(new hpv.HomePageView().render());
+            // TYPESET MATHJAX for currently rendered views
+            this.typeset();
+
+        },
+
+        loadNotes: function(currentNotesMenu, currentNotesCover){
+
+            console.log('loading notes!');
+
+            // show the "home bar" at top of page
+
+
+            // load the TOC for the current notes into the header
+            this.pagelayoutview.site_header.show(currentNotesMenu);
+
+            // load the cover for the notes
+            this.pagelayoutview.site_body.show(currentNotesCover);
+
+
+            // load the cover for the current notes into the body
+
+
+
+            // show views in regions
+            //this.pagelayoutview.site_body.show(new de1notes.De1NotesView.render());
+            // // TYPESET MATHJAX for currently rendered views
+            // this.typeset();
+
+        },
+
+
+
+
         //for starting book with some 'bookmark' data
         bookMarked: function(){},
-
-
-
 
 
 
@@ -124,8 +133,6 @@ define(function(require) {
 
 
 
-
-
         // UTILITY FUNCTIONS (Typeset, etc.)
 
         typeset: function(){
@@ -135,39 +142,6 @@ define(function(require) {
 
         },
 
-
-        // TESTING
-
-        test1: function () {
-
-            $('body').append('<div>When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are\n' +
-                '$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$</div>');
-
-
-            // this.typeset();
-            //MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-
-
-        },
-
-
-        test2: function(){
-
-            // set-up a new marionette view with a handlebars template
-            this.test2view = new t2v.Test2View().render();
-
-
-
-            // append it
-            $('body').append(this.test2view.$el);
-
-
-
-            // render jax
-            this.typeset();
-
-
-        },
 
         spv: function(spv_o){
 
@@ -190,6 +164,13 @@ define(function(require) {
 
 
 
+
+
+
+
+
+
+
     var site = new SiteEngine();
 
 
@@ -199,36 +180,36 @@ define(function(require) {
 
 
 
+    site.on('start',function(){
 
-    if (single_view_mode){
+        if (single_view_mode){
 
+            // LOAD SINGLE PAGE VIEW
+            console.log('loading single page view...');
+            site.spv(single_page);
+        }else{
+            // CREATE BOOK
+            console.log('loading full site...');
+            site.siteBegin();
+        }
 
-        // LOAD SINGLE PAGE VIEW
-
-        console.log('loading single page view...');
-
-
-        // SINGLE PAGE LOADING VIEWS
-
-        // var spv_object = new hv.HeaderView().render();
-        // var spv_object = new ch1v.Chapter1View().render();
-        // var spv_object = new wfk.WhatFermatKnew().render();
-
-
-
-        site.spv(single_page);
-
-    }else{
-
-        // CREATE BOOK
-
-        console.log('loading book...');
-
-        site.siteBegin();
-
-    }
+    });
 
 
+
+
+
+
+    bb.on('home',_.bind(site.loadHome,site));
+
+    bb.on('load_de1_notes',_.bind(function(){
+            site.loadNotes(
+                new de1notesMenu.De1NotesMenuView().render(),
+                new de1notesCover.De1NotesCoverView().render()
+            )},site));
+
+
+    site.start();
 
 
 
