@@ -55,7 +55,7 @@ define(function(require) {
 
     // SET SINGLE PAGE VIEW
 
-    var singe_page = slv_rendered;
+    var single_page = slv_rendered;
 
 
 
@@ -69,7 +69,7 @@ define(function(require) {
         // BOOK STARTUP
 
         // for starting book without any saved 'bookmark' data
-        bookBegin: function(){
+        siteBegin: function(){
 
 
             // OPTIONAL - fire up any intro loading sequence (buying time)
@@ -87,34 +87,6 @@ define(function(require) {
             // show views in regions
 
             this.pagelayoutview.site_body.show(hpv_rendered);
-
-
-            //
-            // this.booklayoutview.header.show(header_rendered);
-            // this.booklayoutview.contents.show(toc_rendered);
-            // // this.booklayoutview.bookOne.show(book1_rendered);
-            // this.booklayoutview.partOne.show(part1_rendered);
-            // // this.booklayoutview.chapter1.show(chapter1_rendered);
-            // // this.booklayoutview.chapter2.show(chapter2_rendered);
-            // // this.booklayoutview.chapter3.show(chapter3_rendered);
-
-
-
-            // create and append shares view to header...
-            // this.sharesview = new shv.SharesView({model:new sm.SharesModel()});
-            // $('#shares_container').append(sharesview.$el);
-
-
-
-            // ToDo:  BUILD DYNAMIC TOC AND LINKS
-
-            // use master contents map to build TOC view
-
-            // build links
-
-            // RENDER VIEWS
-
-            // render views/place according to layout logic
 
 
             // TYPESET MATHJAX for currently rendered views
@@ -218,7 +190,7 @@ define(function(require) {
 
 
 
-    var book = new SiteEngine();
+    var site = new SiteEngine();
 
 
     // SET ACTION HERE...
@@ -244,7 +216,7 @@ define(function(require) {
 
 
 
-        book.spv(singe_page);
+        site.spv(single_page);
 
     }else{
 
@@ -252,7 +224,7 @@ define(function(require) {
 
         console.log('loading book...');
 
-        book.bookBegin();
+        site.siteBegin();
 
     }
 

@@ -32,6 +32,17 @@ define(function (require) {
             //this.chapterTitle = this.ui.title.html();
             // NOW GET SECTIONS...
 
+        },
+
+        onAttach: function(){
+
+
+                $('#deI').click(function() {
+                    alert( "Handler for .click() called.");
+
+            });
+
+
         }
 
 
