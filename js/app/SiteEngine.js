@@ -7,72 +7,39 @@ define(function(require) {
     var _ = require('underscore');
     var bb = require('backbone');
     var mn = require('marionette');
-    //var t2v = require('./views/test2View');
+
+    // ----------------------------------------------------
+    // ------------- LOADING AND RENDERING *ALL* VIEWS ---------------------------------
+    // ----------------------------------------------------
+
+    // Site LAYOUT VIEW
+
+    var slv = require('./views/SiteLayoutView');
+    var slv_rendered = new slv.SiteLayoutView().render();
+
+    // HOME PAGE VIEW
+
+    var hpv = require('./views/homePageview');
+    var hpv_rendered = new hpv.HomePageView().render();
 
 
-
-    // // STYLEGUIDE LAYOUT VIEW
+    // STYLEGUIDE VIEW
     var sty = require('./views/styleGuideView');
-
-
-    // main site view
-
-
-
-
-    // single article views
-    var lagrange_thm = require('./views/lagrangeTheoremView');
-    //
-    //
-    // // MASTER LAYOUT VIEW
-    // var blv = require('./views/notesLayoutView');
-    //
-    // // HEADER VIEWS
-    // var hv = require('./views/headerView');
-    //
-    // // TOC VIEW
-    // var tocv = require('./views/tocView');
-    //
-    // // REQUIRE ALL VIEWS
-    //
-    // var pov = require('./views/partOneView');
-    // // var ch1v = require('./views/chapter1View');
-    // // var wfk = require('./views/whatFermatKnew');
-    // // var pn4 = require('./views/proofN4View');
-    //
-    // //var pn3 = require('./views/proofN3');
-    //
-
-
-
-
-
-
-
-    // RENDER ALL VIEWS
-
-    // STYLEGUIDE PAGE
-
-
-
     var styleGuide_rendered = new sty.StyleGuideView().render();
-    var lagrangeThm_rendered = new lagrange_thm.LagrangeTheoremView().render();
 
 
-    // var header_rendered = new hv.HeaderView().render();
-    // var toc_rendered   = new tocv.TocView().render();
-    //
-    // // var book1_rendered = new bov.BookOneView().render();
-    //
-    // var part1_rendered = new pov.PartOneView().render();
 
-    // var chapter1_rendered = new ch1v.Chapter1View().render();
-    // var chapter2_rendered = new wfk.WhatFermatKnew().render();
-    // var chapter3_rendered = new pn4.ProofN4View().render();
-
-    //var chapter3_rendered = new pn3.ProofN3View().render();
+    // NOTE VIEWS
 
 
+
+
+
+
+    // PROOF VIEWS
+
+   // var lagrange_thm = require('./views/proofs/lagrangeTheoremView');
+    // var lagrangeThm_rendered = new lagrange_thm.LagrangeTheoremView().render();
 
 
 
@@ -82,7 +49,17 @@ define(function(require) {
 
 
 
-    var NotesEngine = mn.Application.extend({
+
+
+
+
+    // SET SINGLE PAGE VIEW
+
+    var singe_page = slv_rendered;
+
+
+
+    var SiteEngine = mn.Application.extend({
 
 
 // ---------- MANUAL EDITS TO ORGANIZE BOOK ARE HERE ---------------- //
@@ -104,17 +81,22 @@ define(function(require) {
 
             console.log('heeeer');
             //load page layout and append to DOM
-            this.booklayoutview = new blv.BookLayoutView().render();
-            this.booklayoutview.append_layout();
+            this.pagelayoutview = slv_rendered;
+            this.pagelayoutview.append_layout();
 
             // show views in regions
-            this.booklayoutview.header.show(header_rendered);
-            this.booklayoutview.contents.show(toc_rendered);
-            // this.booklayoutview.bookOne.show(book1_rendered);
-            this.booklayoutview.partOne.show(part1_rendered);
-            // this.booklayoutview.chapter1.show(chapter1_rendered);
-            // this.booklayoutview.chapter2.show(chapter2_rendered);
-            // this.booklayoutview.chapter3.show(chapter3_rendered);
+
+            this.pagelayoutview.site_body.show(hpv_rendered);
+
+
+            //
+            // this.booklayoutview.header.show(header_rendered);
+            // this.booklayoutview.contents.show(toc_rendered);
+            // // this.booklayoutview.bookOne.show(book1_rendered);
+            // this.booklayoutview.partOne.show(part1_rendered);
+            // // this.booklayoutview.chapter1.show(chapter1_rendered);
+            // // this.booklayoutview.chapter2.show(chapter2_rendered);
+            // // this.booklayoutview.chapter3.show(chapter3_rendered);
 
 
 
@@ -236,18 +218,12 @@ define(function(require) {
 
 
 
-
-
-
-
-
-
-    var book = new NotesEngine();
+    var book = new SiteEngine();
 
 
     // SET ACTION HERE...
 
-    var single_view_mode = true;
+    var single_view_mode = false;
 
 
 
@@ -268,7 +244,7 @@ define(function(require) {
 
 
 
-        book.spv(lagrangeThm_rendered);
+        book.spv(singe_page);
 
     }else{
 
@@ -286,7 +262,7 @@ define(function(require) {
 
 
 
-    return NotesEngine;
+    return SiteEngine;
 
 
 });
