@@ -17,7 +17,7 @@ define(function(require) {
 
     // main site view
 
-    
+
 
 
     // single article views
