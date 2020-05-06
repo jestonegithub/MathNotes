@@ -1,0 +1,241 @@
+
+/*VC TEST*/
+/*FONTS FOR NOTES*/
+
+
+.primaryFont{
+
+    font-family: 'Anton', sans-serif;
+    /*font-family: 'Righteous', cursive;*/
+
+}
+
+
+
+
+.secondaryFont{
+
+    font-family: 'Oswald', sans-serif;
+
+}
+
+
+.tertiaryFont{
+
+    font-family: 'Lato', sans-serif;
+
+}
+
+.fontLabel{
+
+    text-align: center;
+    min-width: 200px;
+    float: left;
+    height: 100px;
+    padding-top: 30px;
+
+}
+
+.fontSample{
+
+    text-align: center;
+    /*float: left;*/
+    min-width:200px;
+    height: 100px;
+
+    float:left;
+
+
+}
+
+
+.fontBox{
+
+    width:200px;
+    height:300px;
+    float: left;
+
+
+}
+
+
+.bigFont{
+
+    font-size: 50px;
+
+}
+
+.mediumFont{
+
+    font-size: 30px;
+}
+
+.smallFont{
+
+    font-size: 15px;
+
+}
+
+
+
+/*COLORS*/
+
+
+.colorOne{
+
+    color: #f89e2c;
+
+}
+
+.colorTwo{
+
+    color: #36b0be;
+
+}
+
+.colorThree{
+
+    color: #c7c3b6;
+
+}
+
+.colorFour{
+
+    color:white;
+
+}
+
+.colorbox{
+
+    min-height: 50px;
+    width:50px;
+    margin-bottom: 20px;
+
+}
+
+#colorbox1{
+
+    background-color: #f89e2c;
+
+
+}
+
+#colorbox2{
+
+    background-color: #36b0be;
+
+}
+
+#colorbox3{
+
+    background-color: #c7c3b6;
+
+}
+
+
+/*-------- THEOREMS, LEMMAS, PROOFS, ETC. ------*/
+
+
+.math_result{
+
+    width:600px;
+    /*border:5px solid #c7c3b6;*/
+    /*margin-left:auto;*/
+    /*margin-right:auto;*/
+    float:right;
+    padding:20px;
+    margin-top:50px;
+    margin-bottom:50px;
+
+}
+
+.result_title{
+
+    font-family:'Montserrat', sans-serif;
+    font-weight:500;
+    font-size:30pt;
+    color: #36b0be;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: right;
+    margin-bottom:10px;
+    border-bottom:5px solid #c7c3b6;
+
+
+
+}
+
+.math_proof{
+
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    border-left:2px solid #979797;
+    padding-left:10px;
+    margin-bottom:50px;
+    color: #000000;
+
+
+}
+
+.proof_title{
+
+    font-family:'Montserrat', sans-serif;
+    font-size:18pt;
+    /*color: #979797;*/
+    /*margin-right:20px;*/
+    width:400px;
+    margin-bottom: 20px;
+    color: grey;
+    /*border-bottom: 2pt solid #c7c3b6;*/
+
+
+}
+
+.qed_tag{
+
+    color:#f89e2c;
+
+}
+
+
+
+
+
+/*STYLE GUIDE PAGE SPECIFIC*/
+
+
+#style_title_box{
+
+    height: 100px;
+    padding-top: 50px;
+
+}
+
+#style_title{
+
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+
+
+
+}
+
+.styleSection{
+
+    height:300px;
+
+
+}
+
+.styleSectionTitle{
+
+    height:40px;
+    border-bottom: 1pt solid black;
+    margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+

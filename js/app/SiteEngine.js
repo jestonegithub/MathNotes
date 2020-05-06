@@ -52,7 +52,7 @@ define(function(require) {
 
     // SET SINGLE PAGE VIEW
 
-    // var single_page = slv_rendered;
+    var single_page = styleGuide_rendered;
 
 
 
@@ -188,7 +188,7 @@ define(function(require) {
 
     // SET ACTION HERE...
 
-    var single_view_mode = false;
+    var single_view_mode = true;
 
 
 
