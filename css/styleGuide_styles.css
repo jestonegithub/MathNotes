@@ -5,9 +5,13 @@
 
 .primaryFont{
 
-    font-family: 'Anton', sans-serif;
+    /*font-family: 'Anton', sans-serif;*/
     /*font-family: 'Righteous', cursive;*/
 
+
+    font-family: arpona, serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
