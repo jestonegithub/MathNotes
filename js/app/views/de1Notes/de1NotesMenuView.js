@@ -34,16 +34,16 @@ define(function (require) {
 
         },
 
-        onAttach: function(){
+        onAttach: function() {
+                var box = $('.box');
+                var button = $('.open-menu, .header-menu');
+                button.on('click', function(){
+                    box.toggleClass('active');
+                });
+            }
 
 
-            // $('#deI').click(function() {
-            //     alert( "Handler for .click() called.");
-            //
-            // });
 
-
-        }
 
 
 

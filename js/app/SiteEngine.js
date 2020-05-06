@@ -79,7 +79,10 @@ define(function(require) {
 
         loadHome: function(){
 
-            // hide "home bar" at top of page
+            // hide title and header regions (if they are already populated)
+
+            this.pagelayoutview.site_title_bar.empty();
+            this.pagelayoutview.site_header.empty();
 
             // show views in regions
             this.pagelayoutview.site_body.show(new hpv.HomePageView().render());
