@@ -17,6 +17,7 @@ define(function (require) {
         id: "site_wrapper",
 
         regions: {
+            site_title_bar: "#title_region",
             site_header: "#header_region",
             site_body: "#body_region"
 

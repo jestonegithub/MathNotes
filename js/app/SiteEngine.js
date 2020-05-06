@@ -17,10 +17,14 @@ define(function(require) {
     var slv = require('./views/SiteLayoutView');
     // var slv_rendered = new slv.SiteLayoutView().render();
 
+    // title bar view
+    var tbv = require('./views/titleBarView');
+
+
     // HOME PAGE VIEW
 
     var hpv = require('./views/homePageview');
-   // var hpv_rendered = new hpv.HomePageView().render();
+    // var hpv_rendered = new hpv.HomePageView().render();
 
 
     // STYLEGUIDE VIEW
@@ -79,6 +83,7 @@ define(function(require) {
 
             // show views in regions
             this.pagelayoutview.site_body.show(new hpv.HomePageView().render());
+
             // TYPESET MATHJAX for currently rendered views
             this.typeset();
 
@@ -90,6 +95,10 @@ define(function(require) {
 
             // show the "home bar" at top of page
 
+
+            // load the title bar at top of page (which also serves as home button)
+
+            this.pagelayoutview.site_title_bar.show(new tbv.TitleBarView().render());
 
             // load the TOC for the current notes into the header
             this.pagelayoutview.site_header.show(currentNotesMenu);
