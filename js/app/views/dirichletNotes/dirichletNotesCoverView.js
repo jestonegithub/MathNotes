@@ -2,18 +2,18 @@ define(function (require) {
     var mn = require('marionette');
     var bb = require('backbone');
     //var _ = require('underscore');
-    var tmp = require('hbs!app/templates/homePageView');
+    var tmp = require('hbs!app/templates/dirichletNotes/dirichletNotesCoverView');
 
 
     //This is a View - and the root view of the game living in #main
 
-    var HomePageView = mn.ItemView.extend({
+    var DirichletNotesCoverView = mn.ItemView.extend({
 
         template: tmp,
 
-        id:'homepage',
+        id:'dirichletNotesCover',
 
-        className:'home',
+        className:'notes',
 
         // chapterNumber:0,
         //
@@ -37,15 +37,10 @@ define(function (require) {
         onAttach: function(){
 
 
-                $('#de1').click(function() {
-                    bb.trigger('load_de1_notes');
-
-            });
-
-                $('#dirichlet').click(function(){
-                    bb.trigger('load_dirichlet_notes');
-                    console.log('triggering dirchilet notes!')
-                })
+            // $('#deI').click(function() {
+            //     alert( "Handler for .click() called.");
+            //
+            // });
 
 
         }
@@ -67,6 +62,6 @@ define(function (require) {
     });
 
 
-    return {HomePageView:HomePageView}
+    return {DirichletNotesCoverView:DirichletNotesCoverView}
 
 });

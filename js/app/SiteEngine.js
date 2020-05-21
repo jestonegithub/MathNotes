@@ -37,7 +37,8 @@ define(function(require) {
 
     var de1notesMenu = require('./views/de1Notes/de1NotesMenuView');
     var de1notesCover = require('./views/de1Notes/de1NotesCoverView');
-
+    var dirichletnotesMenu = require('./views/dirichletNotes/dirichletNotesMenuView');
+    var dirichletnotesCover = require('./views/dirichletNotes/dirichletNotesCoverView');
 
 
     // PROOF VIEWS
@@ -188,7 +189,7 @@ define(function(require) {
 
     // SET ACTION HERE...
 
-    var single_view_mode = true;
+    var single_view_mode = false;
 
 
 
@@ -219,6 +220,12 @@ define(function(require) {
                 new de1notesMenu.De1NotesMenuView().render(),
                 new de1notesCover.De1NotesCoverView().render()
             )},site));
+
+    bb.on('load_dirichlet_notes',_.bind(function(){
+        site.loadNotes(
+            new dirichletnotesMenu.DirichletNotesMenuView().render(),
+            new dirichletnotesCover.DirichletNotesCoverView().render()
+        )},site));
 
 
     site.start();
