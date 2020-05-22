@@ -47,7 +47,7 @@
 .header-menu {
     height: 50px;
     background: #D32F2F;
-    margin-bottom: 200px
+    margin-bottom: 10px;
 }
 
 .header-menu button {
@@ -66,14 +66,14 @@
 }
 
 .top-menu {
-    margin-top: 35px;
+    margin-top: 5px;
 }
 
 .top-menu a {
     text-decoration: none;
     color: black;
     font-weight: 500;
-    font-size: 16rem;
+    font-size: 20px;
     display: block;
     line-height: 40px;
     padding-left: 35px;
