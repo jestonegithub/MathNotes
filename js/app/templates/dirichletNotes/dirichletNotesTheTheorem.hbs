@@ -1,0 +1,103 @@
+<!--<h2>About this Issue</h2>-->
+<!--Proof here follows [Strombergsson notes].-->
+
+ 
+<h2>Dirichlet's Theorem</h2>
+<h3></h3>
+Anyone with exposure to elementary concepts of numbers is likely aware of the fact that there are an infinite number of primes. Consider one of the earliest and most well known proofs of this simple fact, attributed to Euclid.
+<blockquote><strong>Theorem.</strong> There are an infinite number of primes.</blockquote>
+The proof is short and elegant. Suppose there are only a finite number of primes. Let $ \{p_1,p_2,...,p_n \}$ denote the full set of $ n$ primes. Then we define a new number $ P = p_1 p_2 p_3 ... p_n + 1$. Let $ p$ be some prime that divides $ P$. Now if $ p = p_i$ for some prime in the previous list, then $ p | P$ and $ p|(p_1 p_2 p_3 ... p_n)$. But this implies that $ p | 1$, which is impossible as we suppose that all primes $ > 1$. Thus, our original assumption, that there are a finite number of primes, is false, and so there must be an infinite number of primes.
+
+One may naturally be let to consider, then, which subsets of the integers still contain an infinite number of primes. Clearly, the evens do not, as 2 is the only even prime. Likewise, the odds do contain an infinite number of primes, as all primes but 2 are odd, and we've already seen that there are an infinite number of primes.
+
+Beyond the even and odd subsets of the integers, one of the most basic subsets are so-called arithmetic progressions. In an arithmetic progression, each term is separated from the previous term by some constant $ k$. For example, $ \{1,5,9,13,... \}$ is an arithmetic progression with $ k=4$. From a modern viewpoint, we see that this arithmetic progression is the collection of numbers that are equal to $ 1$ mod $ 4$.
+
+We already see immediately that there is at least one arithmetic progression that contains an infinite number of primes, namely the odd integers (that is, the set of numbers equal to $ 1$ mod $ 2$).
+
+Likewise, if we consider the evens, we see that not every arithmetic progression need contain an infinite number of primes.
+
+This begs the question: are there any other arithmetic progressions besides the odd integers that contain an infinite number of primes? And also the further question: what are the criteria by which an arithmetic progression will contain an infinite number of primes?
+
+The answer to both questions is given by Dirichlet's Theorem.
+<h3></h3>
+<blockquote><strong>Dirichlet's Theorem.</strong> If $ a, q$ are positive integers with $ (a, q) = 1$, then there are infinitely many primes in the arithmetic progression
+    <p style="text-align: center;">$ a, a + q, a + 2q, a + 3q, . . . .$</p>
+</blockquote>
+This theorem was originally proposed by Legendre, who was unable to give a proof himself. Instead, it was proven by Dirichlet in 1837, using techniques that would perhaps seem more at home in modern analytic number theory than in the works of his mathematical colleagues of the period.
+
+It can be difficult to form some intuition about the problem at hand. For arithmetic progressions where $ k$ is fairly small, it's hard to imagine how it might criss-cross the integers and <em>not</em> run into primes again and again. But if $ k$ is large, our intuition begins to fail us. As it grows, it becomes less and less obvious that any given progression <em>must</em> cross the primes an infinite number of times. Still, it would seem to be some kind of miracle if a particular arithmetic progression managed to dodge the "vast" majority" of the primes, especially given the quasi-random nature of the latter.
+
+The strategy of Dirichlet's proof is a generalization of method for proving that there are an infinite number of primes -- a method quite different from Euclid's own proof) using the so-called Riemann Zeta function.
+
+ 
+<!--<h2>Riemann Zeta and Infinitude of Primes</h2>-->
+<!--Euler was the first to realize that there was a connection between the (infinite) sum of the reciprocals of the natural numbers and a certain product of prime numbers, which we will get to shortly.-->
+
+<!--First, we consider the infinite sum:-->
+<!--<p style="text-align: center;">$ \sum_{n=1}^{\infty} n^{-1}$</p>-->
+<!--This is known as the Harmonic Series, and it is famously divergent.-->
+
+<!--The Harmonic Series is actually a special case of a more general type of series, known as a P-series.-->
+<!--<p style="text-align: center;">$ \sum_{n=1}^{\infty} n^{-p}$</p>-->
+<!--Namely, it's a P-series with $ p=1$. For a P-series, we have the well known result that the series converges so long as p > 1.-->
+
+<!--[put this in a note/sub level?-->
+
+<!--For those who haven't seen it, or need a refresher, the way to prove the convergence/divergence of the general P-series is to compare it with the integral of the function $ x^{-p}$.-->
+
+<!--First note that for each integer $ n$, $x^{-p} = n^{-p}$. Note also that we can think about our original sum as a lower Riemann sum for $ \int_{1}^{\infty} \frac{1}{x^p}dx$. This means that the integral of our continuous function bounds our sum, which is itself a lower Riemann sum for that same function. So as long as $ \int_{1}^{\infty} \frac{1}{x^p}dx$ converges, then so will our sum.-->
+
+<!--Let $ p \ne 1$. Then $ \int_{1}^{\infty} \frac{1}{x^p}dx$ is equal to $ \lim_{b\to\infty} \int_{1}^{b} \frac{1}{x^p}dx$. Then we have:-->
+<!--<p style="text-align: center;">$ \lim_{b\to\infty} \int_{1}^{b} \frac{1}{x^p}dx$</p>-->
+<!--<p style="text-align: center;">$ = \lim_{b\to\infty} (1-p)^{-1}x^{-p}  |^{b}_{1}$</p>-->
+<!--<p style="text-align: center;">$ =  \lim_{b\to\infty} ( \frac{1}{(1-p) b^{p-1}} - \frac{1}{1-p})$</p>-->
+<!--Now if $ p > 1$, then this last line evaluates to-->
+<!--<p style="text-align: center;">$ = - \frac{1}{1-p}$</p>-->
+<!--For finite $ p$, this value will always be finite and thus the integral converges, which means our original infinite sum also converges.-->
+
+<!--If $ p < 1$, then we have $ b^{- (p-1)} = b^{+ (|p|+1}) $, which as $ b \rightarrow \infty = \infty$.-->
+
+<!--Note also if $ p=1$ we have to evaluate an integral over $ \frac{1}{x}$, from which we will pick up an $ ln$ term. Evaluating this term at the boundaries will yield $ ln \infty - ln (1) = \infty$, showing that the Harmonic Series indeed diverges.-->
+
+<!--Thus we see that for a P-series, the sum converges only when $ p > 1$ and diverges otherwise.-->
+
+<!--END SUBNOTE?]-->
+
+<!--Although the Harmonic Series is divergent, we can introduce the Riemann Zeta Function $ \zeta(s) = \sum_{n=1}^{\infty} n^{-s}$, which is defined for $ s \in \mathbb{C}$, where Re $ s > 1$. Denoting $ s = \sigma + it$, the latter condition becomes $ \{s \in \mathbb{C}\ |\  \sigma > 1 \}$.-->
+
+<!--This series is convergent in the domain defined above. This convergence can be demonstrated by comparison with (convergent) the P-series-->
+<!--<p style="text-align: center;">$ \sum_{n=1}^{\infty} n^{-p}$</p>-->
+<!--where $ p$ is selected so that $ \sigma\ \geq\ p > 1$. Specifically, note that $ |n^{-s}| = |e^{-s\ log\ n}| = |e^{ \sigma\ log\ n\ -\ it\ log\ n}|$ $ = e^{- \sigma\ log\ n} = n^{- \sigma}  \leq n^{-c} $. Since the P-series is known to be convergent for any $ p > 1$, this implies the series defined by $ \zeta(s)$ must also converge in the defined domain.-->
+
+<!-- -->
+
+<!--In 1737, Leonhard Euler published what is now called Euler's Product:-->
+<!--<p style="text-align: center;">$ \zeta(s) =  \sum_{n=1}^{\infty} n^{-s} = \prod_{p} (1-p^{-s})^{-1}$</p>-->
+<!-- At first blush, the infinite sum and infinite series might seem to have nothing to do with one another. But with just a bit of thought, one can imagine multiplying out the products on the right hand side and arriving at various integers. More careful thought reveals that you will arrive at <em>all</em> the integers.-->
+
+<!--To see this, we first recognize that the product terms are each the value of a geometric sum. That is-->
+<!--<p style="text-align: center;">$ (1-p^{-s})^{-1} = 1+ p^{-s} + p^{-2s} + ... $</p>-->
+<!--So the full product looks like-->
+
+<!--$ (1+ 2^{-s} + 2^{-2s} + ...) (1+ 3^{-s} + 3^{-2s} + ...) (1+ 4^{-s} + 4^{-2s} + ...) ...$-->
+
+<!--Now what we'd like to see is that we end up with a series of terms like-->
+
+<!--$ 1 + 2^{-s} + 3^{-s} + (2 \cdot 3)^{-s}) + ... $-->
+
+<!--so that we end up with each unique combination of primes once, yielding each of the terms in the sum of Euler's Product.-->
+
+<!--But we must be careful with infinite products. We may not necessarily reorder the terms however we would like.-->
+
+<!--[rigorous proof of product formula]-->
+
+<!-- -->
+
+<!-- -->
+<!--<h2>Dirichlet Characters</h2>-->
+<!-- -->
+<!--<h2>Outline of a Proof</h2>-->
+<!-- -->
+<!--<h2>Results from Complex Analysis</h2>-->
+<!-- -->
+<!--<h2>The Proof</h2>-->

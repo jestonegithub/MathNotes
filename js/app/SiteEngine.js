@@ -35,11 +35,17 @@ define(function(require) {
 
     // NOTE VIEWS
 
-    var de1notesMenu = require('./views/de1Notes/de1NotesMenuView');
-    var de1notesCover = require('./views/de1Notes/de1NotesCoverView');
+
+    ////// Dirichlet Views
     var dirichletnotesMenu = require('./views/dirichletNotes/dirichletNotesMenuView');
     var dirichletnotesCover = require('./views/dirichletNotes/dirichletNotesCoverView');
+    var dirichletNotesTheTheorem = require('./views/dirichletNotes/dirichletNotesTheTheoremView');
 
+
+
+
+    var de1notesMenu = require('./views/de1Notes/de1NotesMenuView');
+    var de1notesCover = require('./views/de1Notes/de1NotesCoverView');
 
     // PROOF VIEWS
 
@@ -53,7 +59,7 @@ define(function(require) {
 
     // SET SINGLE PAGE VIEW
 
-    var single_page = styleGuide_rendered;
+    var single_page = new dirichletNotesTheTheorem.DirichletNotesTheTheoremView().render();
 
 
 
@@ -189,7 +195,7 @@ define(function(require) {
 
     // SET ACTION HERE...
 
-    var single_view_mode = false;
+    var single_view_mode = true;
 
 
 
